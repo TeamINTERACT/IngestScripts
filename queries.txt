@@ -1,0 +1,16 @@
+CREATE TABLE portal_dev.ethica_assignments(
+    ethica_id INTEGER NOT NULL,
+    study_id INTEGER NOT NULL,
+    interact_id BIGINT NOT NULL DEFAULT 0,
+    ethica_email TEXT,
+    start_date timestamptz,
+    end_date timestamptz,
+    submitted_at_gap_start INTEGER DEFAULT '-1'::INTEGER,
+    expired_at_gap_end INTEGER DEFAULT 0,
+    account_status TEXT DEFAULT 'active'::text,
+    low_notifications TEXT DEFAULT 'active'::text,
+    low_adherence TEXT DEFAULT 'active'::text,
+    relayed_to_treksoft BOOLEAN DEFAULT false,
+    ignore_reason TEXT,
+    PRIMARY KEY (ethica_id, study_id)
+    );
